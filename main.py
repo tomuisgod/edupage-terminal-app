@@ -19,24 +19,22 @@ try:
     if vyber == 1:
         call("clear")
         uc = edu.get_teachers()
-        uc.sort(key = EduStudent.__sort__)
 
-        for uc in uc:
+        for teacher in uc:
             print("________________________________")
-            print(f"{uc.fullname}")
+            print(str(teacher))
             print("________________________________")
 
-    if vyber == 2:
+    elif vyber == 2:
         call("clear")
         ziaci = edu.get_students()
-        ziaci.sort(key = EduStudent.__sort__)
+        ziaci.sort(key=EduStudent.__sort__)
 
         for ziaci in ziaci:
             print("________________________________")
             print(f"{ziaci.number_in_class}: {ziaci.fullname}")
 
-
-    if vyber == 3:
+    elif vyber == 3:
         call("clear")
         du = edu.get_homework()
 
@@ -49,7 +47,7 @@ try:
             print(hw.due_date)
             print("________________________________")
 
-    if vyber == 4:
+    elif vyber == 4:
         dnes = EduDate.today()
         rozvrh = edu.get_timetable(dnes)
 
@@ -63,7 +61,8 @@ try:
 
     else:
         call("clear")
-        print("Bohužiaľ si si vybral neexistujúcu možnosť! Skús to znova prosím")
+        print(
+            "Bohužiaľ si si vybral neexistujúcu možnosť! Skús to znova prosím")
 
 except BadCredentialsException:
     call("clear")
